@@ -62,13 +62,13 @@
             "BUILDINFO" : true,
             "BUILDHISTORY" : true,
             "step1" : {
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage core-image-sato:do_testsdk"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage core-image-weston:do_testsdk"
             },
             "step2" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk_ext",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk core-image-minimal:do_testsdkext core-image-sato:do_testsdkext"
+                "BBTARGETS" : "core-image-weston:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk_ext",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk core-image-minimal:do_testsdkext core-image-weston:do_testsdkext"
             },
             "step3" : {
                 "BUILDHISTORY" : false,
@@ -81,8 +81,8 @@
             "BUILDINFO" : true,
             "BUILDHISTORY" : true,
             "step1" : {
-                "BBTARGETS" : "core-image-full-cmdline core-image-sato core-image-sato-sdk",
-                "SANITYTARGETS" : "core-image-full-cmdline:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage"
+                "BBTARGETS" : "core-image-full-cmdline core-image-weston core-image-weston-sdk",
+                "SANITYTARGETS" : "core-image-full-cmdline:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage"
             }
         },
         "ptest-qemu" : {
@@ -103,8 +103,8 @@
         },
         "ltp-qemu" : {
             "BUILDINFO" : true,
-            "BBTARGETS" : "core-image-sato",
-            "SANITYTARGETS" : "core-image-sato:do_testimage",
+            "BBTARGETS" : "core-image-weston",
+            "SANITYTARGETS" : "core-image-weston:do_testimage",
             "extravars" : [
                 "IMAGE_INSTALL_append = ' ltp'",
                 "TEST_SUITES = 'ping ssh ltp ltp_compliance'",
@@ -116,16 +116,16 @@
         "arch-hw" : {
             "BUILDINFO" : true,
             "step1" : {
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-weston-ptest-all core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston-ptest-all core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
             }
         },
         "arch-hw-qemu" : {
             "BUILDINFO" : true,
             "step1" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-minimal core-image-sato core-image-sato-sdk core-image-sato:do_populate_sdk core-image-sato:do_populate_sdk_ext",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage core-image-sato:do_testsdk core-image-sato:do_testsdkext"
+                "BBTARGETS" : "core-image-minimal core-image-weston core-image-weston-sdk core-image-weston:do_populate_sdk core-image-weston:do_populate_sdk_ext",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage core-image-weston:do_testsdk core-image-weston:do_testsdkext"
             },
             "step2" : {
                 "BUILDHISTORY" : false,
@@ -136,7 +136,7 @@
             "DISTRO" : "poky-altcfg",
             "BUILDINFO" : true,
             "step1" : {
-                "BBTARGETS" : "core-image-full-cmdline core-image-sato core-image-sato-sdk"
+                "BBTARGETS" : "core-image-full-cmdline core-image-weston core-image-weston-sdk"
             }
         },
         "buildperf" : {
@@ -207,17 +207,17 @@
                 "BB_SIGNATURE_HANDLER = 'OEEquivHash'"
             ],
             "step1" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage"
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage"
             },
             "step2" : {
-                "BBTARGETS" : "core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS" : "core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
             },
             "step3" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato:do_populate_sdk core-image-minimal:do_populate_sdk_ext",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS" : "core-image-weston:do_populate_sdk core-image-minimal:do_populate_sdk_ext",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
             }
         },
         "qemuarm" : {
@@ -229,8 +229,8 @@
             "BUILDINFO" : true,
             "step1" : {
                 "SDKMACHINE" : "aarch64",
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-sato:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk_ext",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage core-image-sato:do_testsdk  core-image-minimal:do_testsdkext core-image-sato:do_testsdkext"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk_ext",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage core-image-weston:do_testsdk  core-image-minimal:do_testsdkext core-image-weston:do_testsdkext"
             }
         },
         "qemuarm-alt" : {
@@ -242,7 +242,7 @@
             "TEMPLATE" : "arch-hw",
             "step2" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk"
+                "BBTARGETS" : "core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk"
             }
         },
         "beaglebone-alt" : {
@@ -258,8 +258,8 @@
             "BUILDINFO" : true,
             "step1" : {
                 "SDKMACHINE" : "aarch64",
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-sato:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk_ext",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage core-image-sato:do_testsdk  core-image-minimal:do_testsdkext core-image-sato:do_testsdkext"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk_ext",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage core-image-weston:do_testsdk  core-image-minimal:do_testsdkext core-image-weston:do_testsdkext"
             }
         },
         "qemuarm64-ptest" : {
@@ -284,13 +284,13 @@
             ],
             "step1": {
                 "MACHINE": "n1sdp",
-                "BBTARGETS": "core-image-minimal core-image-sato core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS": "core-image-minimal core-image-weston core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
                 },
             "step2": {
                 "MACHINE": "juno",
-                "BBTARGETS": "core-image-minimal core-image-sato core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS": "core-image-minimal core-image-weston core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
             }
         },
        "bringup" : {
@@ -298,24 +298,24 @@
             "SSTATEDIR" : ["SSTATE_DIR ?= '${HELPERBUILDDIR}/sstate'"],
             "MACHINE" : "qemuarm64",
              "step1" : {
-                 "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-sato:do_populate_sdk",
-                 "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage core-image-sato:do_testsdk"
+                 "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston:do_populate_sdk",
+                 "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage core-image-weston:do_testsdk"
              },
             "step2" : {
                 "MACHINE" : "qemux86-64",
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev core-image-weston-ptest-all core-image-sato:do_populate_sdk",
-                "SANITYTARGETS" : "core-image-sato:do_testsdk"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev core-image-weston-ptest-all core-image-weston:do_populate_sdk",
+                "SANITYTARGETS" : "core-image-weston:do_testsdk"
 
             },
             "step3" : {
                  "SDKMACHINE" : "x86_64",
-                 "BBTARGETS" : "core-image-sato:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk_ext",
-                 "SANITYTARGETS" : "core-image-sato:do_testsdk core-image-minimal:do_testsdkext core-image-sato:do_testsdkext"
+                 "BBTARGETS" : "core-image-weston:do_populate_sdk core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk_ext",
+                 "SANITYTARGETS" : "core-image-weston:do_testsdk core-image-minimal:do_testsdkext core-image-weston:do_testsdkext"
              },
             "step4" : {
                 "MACHINE" : "qemux86-64",
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-minimal:do_populate_sdk_ext core-image-sato:do_populate_sdk"
+                "BBTARGETS" : "core-image-minimal:do_populate_sdk_ext core-image-weston:do_populate_sdk"
             },
             "step5" : {
                 "BUILDINFO" : false,
@@ -459,11 +459,11 @@
                 "baselib = \"${@d.getVar('BASE_LIB_tune-' + (d.getVar('DEFAULTTUNE', True) or 'INVALID'), True) or 'lib'}\""
             ],
             "step1" : {
-                "BBTARGETS" : "core-image-minimal core-image-sato",
+                "BBTARGETS" : "core-image-minimal core-image-weston",
                 "SANITYTARGETS" : "core-image-minimal:do_testimage"
             },
             "step2" : {
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "TEST_SUITES_append = ' x32lib'"
                 ]
@@ -506,8 +506,8 @@
                 ]
             },
             "step3" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "TEST_SUITES_append = ' multilib'",
                     "require conf/multilib.conf",
@@ -519,8 +519,8 @@
             },
             "step4" : {
                 "PACKAGE_CLASSES" : "package_ipk",
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "TEST_SUITES_append = ' multilib'",
                     "require conf/multilib.conf",
@@ -533,7 +533,7 @@
             "step5" : {
                 "MACHINE" : "qemux86",
                 "SDKMACHINE" : "i686",
-                "BBTARGETS" : "lib64-core-image-sato lib64-core-image-sato-sdk",
+                "BBTARGETS" : "lib64-core-image-weston lib64-core-image-weston-sdk",
                 "extravars" : [
                     "require conf/multilib.conf",
                     "MULTILIBS = 'multilib:lib64'",
@@ -556,26 +556,26 @@
         "pkgman-rpm-non-rpm" : {
             "MACHINE" : "qemux86",
             "PACKAGE_CLASSES" : "package_rpm",
-            "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev",
-            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage"
+            "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev",
+            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage"
         },
         "pkgman-deb-non-deb" : {
             "MACHINE" : "qemux86",
             "PACKAGE_CLASSES" : "package_deb",
-            "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev",
-            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage"
+            "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev",
+            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage"
         },
         "pkgman-non-rpm" : {
             "MACHINE" : "qemux86",
             "step1" : {
                 "PACKAGE_CLASSES" : "package_ipk",
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage"
             },
             "step2" : {
                 "PACKAGE_CLASSES" : "package_deb",
-                "BBTARGETS" : "core-image-sato core-image-sato-sdk core-image-minimal core-image-minimal-dev",
-                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-sato:do_testimage core-image-sato-sdk:do_testimage"
+                "BBTARGETS" : "core-image-weston core-image-weston-sdk core-image-minimal core-image-minimal-dev",
+                "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-weston:do_testimage core-image-weston-sdk:do_testimage"
             }
         },
         "poky-tiny" : {
@@ -591,38 +591,38 @@
             ],
             "step1" : {
                 "MACHINE" : "qemux86",
-                "BBTARGETS" : "wic-tools core-image-sato",
+                "BBTARGETS" : "wic-tools core-image-weston",
                 "EXTRACMDS" : [
-                    "wic create directdisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-sato/",
-                    "wic create directdisk-gpt -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-sato/",
-                    "wic create mkefidisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-sato/"
+                    "wic create directdisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-weston/",
+                    "wic create directdisk-gpt -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-weston/",
+                    "wic create mkefidisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86/directdisk/core-image-weston/"
                 ]
             },
             "step2" : {
                 "MACHINE" : "genericx86",
-                "BBTARGETS" : "wic-tools core-image-sato",
+                "BBTARGETS" : "wic-tools core-image-weston",
                 "EXTRACMDS" : [
-                    "wic create directdisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-sato/",
-                    "wic create directdisk-gpt -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-sato/",
-                    "wic create mkefidisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-sato/"
+                    "wic create directdisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-weston/",
+                    "wic create directdisk-gpt -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-weston/",
+                    "wic create mkefidisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86/directdisk/core-image-weston/"
                 ]
             },
             "step3" : {
                 "MACHINE" : "qemux86-64",
-                "BBTARGETS" : "wic-tools core-image-sato",
+                "BBTARGETS" : "wic-tools core-image-weston",
                 "EXTRACMDS" : [
-                    "wic create directdisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-sato/",
-                    "wic create directdisk-gpt -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-sato/",
-                    "wic create mkefidisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-sato/"
+                    "wic create directdisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-weston/",
+                    "wic create directdisk-gpt -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-weston/",
+                    "wic create mkefidisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/qemux86-64/directdisk/core-image-weston/"
                 ]
             },
             "step4" : {
                 "MACHINE" : "genericx86-64",
-                "BBTARGETS" : "wic-tools core-image-sato",
+                "BBTARGETS" : "wic-tools core-image-weston",
                 "EXTRACMDS" : [
-                    "wic create directdisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-sato/",
-                    "wic create directdisk-gpt -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-sato/",
-                    "wic create mkefidisk -e core-image-sato -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-sato/"
+                    "wic create directdisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-weston/",
+                    "wic create directdisk-gpt -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-weston/",
+                    "wic create mkefidisk -e core-image-weston -o ${BUILDDIR}/tmp/deploy/wic_images/genericx86-64/directdisk/core-image-weston/"
                 ]
             }
         },
@@ -684,8 +684,8 @@
         "musl-qemux86" : {
             "MACHINE" : "qemux86",
             "SDKMACHINE" : "x86_64",
-            "BBTARGETS" : "core-image-minimal core-image-full-cmdline core-image-sato-sdk world",
-            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-full-cmdline:do_testimage core-image-sato-sdk:do_testimage",
+            "BBTARGETS" : "core-image-minimal core-image-full-cmdline core-image-weston-sdk world",
+            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-full-cmdline:do_testimage core-image-weston-sdk:do_testimage",
             "extravars" : [
                 "TCLIBC = 'musl'"
             ]
@@ -694,8 +694,8 @@
             "MACHINE" : "qemux86-64",
             "SDKMACHINE" : "x86_64",
             "BUILDINFO" : true,
-            "BBTARGETS" : "core-image-minimal core-image-full-cmdline core-image-sato-sdk world",
-            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-full-cmdline:do_testimage core-image-sato-sdk:do_testimage",
+            "BBTARGETS" : "core-image-minimal core-image-full-cmdline core-image-weston-sdk world",
+            "SANITYTARGETS" : "core-image-minimal:do_testimage core-image-full-cmdline:do_testimage core-image-weston-sdk:do_testimage",
             "extravars" : [
                 "TCLIBC = 'musl'"
             ]
@@ -807,16 +807,16 @@
             },
             "step4" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato core-image-sato:do_populate_sdk_ext"
+                "BBTARGETS" : "core-image-weston core-image-weston:do_populate_sdk_ext"
             },
             "step5" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato -S none",
+                "BBTARGETS" : "core-image-weston -S none",
                 "EXTRACMDS" : ["${SCRIPTSDIR}/../janitor/clobberdir ${BUILDDIR}/../build/tmp"]
             },
             "step6" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato",
+                "BBTARGETS" : "core-image-weston",
                 "extravars" : [
                     "TMPDIR = '${TOPDIR}/newtmp'",
                     "require ../locked-sigs.inc"
@@ -827,30 +827,30 @@
             "MACHINE" : "qemux86-64",
             "step1" : {
                 "SDKMACHINE" : "x86_64",
-                "BBTARGETS" : "core-image-sato:do_populate_sdk_ext",
+                "BBTARGETS" : "core-image-weston:do_populate_sdk_ext",
                 "extravars" : [
                     "TMPDIR = '${TOPDIR}/sdktmp'"
                 ]
             },
             "step2" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "IMAGE_INSTALL_append = ' logrotate'",
                     "TEST_SUITES_append = ' logrotate'"
                 ]
             },
             "step3" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "DISTRO_FEATURES_append = ' pam'",
                     "TEST_SUITES_append = ' pam'"
                 ]
             },
             "step4" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "IMAGE_INSTALL_append = ' service hello-mod'",
                     "TEST_SUITES_append = ' skeletoninit'"
@@ -858,8 +858,8 @@
                 "ADDLAYER" : ["${BUILDDIR}/../meta-skeleton"]
             },
             "step5" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "DISTRO_FEATURES_append = ' systemd'",
                     "VIRTUAL-RUNTIME_init_manager = 'systemd'",
@@ -867,16 +867,16 @@
                 ]
             },
             "step6" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "DISTRO_FEATURES_append = ' systemd'",
                     "VIRTUAL-RUNTIME_init_manager = 'sysvinit'"
                 ]
             },
             "step7" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "TEST_SUITES_append = ' systemd'",
                     "DISTRO_FEATURES_append = ' systemd'",
@@ -885,8 +885,8 @@
                 ]
             },
             "step8" : {
-                "BBTARGETS" : "core-image-sato",
-                "SANITYTARGETS" : "core-image-sato:do_testimage",
+                "BBTARGETS" : "core-image-weston",
+                "SANITYTARGETS" : "core-image-weston:do_testimage",
                 "extravars" : [
                     "PACKAGECONFIG_append_x86-64_pn-mesa = ' gallium-llvm gallium r600'"
                 ]
